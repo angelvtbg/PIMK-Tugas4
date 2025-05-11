@@ -50,7 +50,7 @@ class MahasiswaController extends Controller
         $mahasiswa->update($request->only(['name', 'nim', 'prodi']));
 
         return redirect()->route('mahasiswa.index')->with([
-            'message' => 'Mahasiswa berhasil diperbarui!',
+            'message' => 'Data berhasil diperbarui!',
             'alert-type' => 'success'
         ]);
     }
@@ -60,7 +60,7 @@ class MahasiswaController extends Controller
         $mahasiswa->delete();
 
         return redirect()->route('mahasiswa.index')->with([
-            'message' => 'Mahasiswa berhasil dihapus!',
+            'message' => 'Data berhasil dihapus!',
             'alert-type' => 'success'
         ]);
     }

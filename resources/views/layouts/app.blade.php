@@ -17,22 +17,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <script>
-        @if(Session::has('message'))
-            toastr.options = {
-                "closeButton": true,
-                "progressBar": true,
-                "timeOut": 3000
-            };
+        @if (Session::has('message'))
             var type = "{{ Session::get('alert-type', 'info') }}";
-            var msg = "{{ Session::get('message') }}";
             switch (type) {
-                case 'info': toastr.info(msg); break;
-                case 'success': toastr.success(msg); break;
-                case 'warning': toastr.warning(msg); break;
-                case 'error': toastr.error(msg); break;
+                case 'info':
+                    toastr.options.timeOut = 5000;
+                    toastr.info("{{ Session::get('message') }}");
+                    break;
+                case 'success':
+                    toastr.options.timeOut = 5000;
+                    toastr.success("{{ Session::get('message') }}");
+                    break;
+                case 'warning':
+                    toastr.options.timeOut = 5000;
+                    toastr.warning("{{ Session::get('message') }}");
+                    break;
+                case 'error':
+                    toastr.options.timeOut = 5000;
+                    toastr.error("{{ Session::get('message') }}");
+                    break;
             }
         @endif
     </script>
+
 
     @stack('scripts')
 </body>

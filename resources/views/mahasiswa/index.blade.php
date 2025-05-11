@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+    <div class="flex flex-col md:flex-row justify-between items-center mb-4 mt-20">
         <div class="flex items-center gap-4">
             <h1 class="text-2xl font-bold">Daftar Mahasiswa</h1>
             <button onclick="openAddModal()" class="px-4 py-2 bg-green-600 text-white rounded-[10px] hover:bg-green-700">
